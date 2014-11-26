@@ -5,10 +5,11 @@
     "index.js",
     "test.js"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "return an sha1sum of a given file",
   "keywords": [
-    "md5sum",
+    "sha1",
+    "sha1sum",
     "checksum"
   ],
   "homepage": "https://github.com/roryrjb/sha1-file",
