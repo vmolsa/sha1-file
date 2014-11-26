@@ -1,0 +1,32 @@
+{
+  "name": "sha1-file",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "test.js"
+  ],
+  "version": "0.0.1",
+  "description": "return an sha1sum of a given file",
+  "keywords": [
+    "md5sum",
+    "checksum"
+  ],
+  "homepage": "https://github.com/roryrjb/sha1-file",
+  "author": {
+    "name": "Rory Bradford",
+    "email": "roryrjb@gmail.com",
+    "url": "www.roryrjb.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roryrjb/sha1-file.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/roryrjb/sha1-file/issues",
+    "email": "roryrjb@gmail.com"
+  },
+  "scripts": {
+    "test": "node test"
+  }
+}
