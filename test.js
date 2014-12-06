@@ -1,26 +1,22 @@
 'use strict';
 
 var sha1 = require('./index');
+var assert = require('assert');
 
-console.log('sha1 (1) ' + sha1('./README.md'));
+assert.equal(sha1('./LICENSE.md'), '635cf3c238455570c909d24a5237050cbb1837e9');
 
-sha1.async('./README.md', function (data) {
-  console.log('sha1 (2) ' + data);
+sha1.async('./LICENSE.md', function (data) {
+  assert.equal(data, '635cf3c238455570c909d24a5237050cbb1837e9');
 });
 
-sha1.async('./README.md', function (data) {
-  console.log('sha1 (3) ' + data);
+sha1.async('./LICENSE.md', function (data) {
+  assert.equal(data, '635cf3c238455570c909d24a5237050cbb1837e9');
 }, true);
 
 // errors
 
 // non-strict: will pass through an error to `data`
 sha1.async('./null', function (data) {
-  console.log('sha1 (4) ' + data);
+  assert.equal(data.code, 'ENOENT');
 });
-
-// strict: will throw an error
-sha1.async('./null', function (data) {
-  console.log('sha1 (5) ' + data);
-}, true);
 

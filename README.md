@@ -1,8 +1,6 @@
-# sha1-file
+# sha1-file [![Build Status](https://travis-ci.org/roryrjb/sha1-file.svg?branch=master)](https://travis-ci.org/roryrjb/sha1-file)
 
-### Overview
-
-Simply return an `sha1` sum of a given file.
+> Simply return an `sha1` sum of a given file.
 
 ### Installation
 
@@ -50,3 +48,6 @@ sha1File.async('./null', function (data) {
 }, true);
 ```
 
+### LICENSE
+
+MIT

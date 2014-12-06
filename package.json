@@ -3,9 +3,10 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "test.js"
+    "test.js",
+    "LICENSE.md"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "return an sha1sum of a given file",
   "keywords": [
     "sha1",
