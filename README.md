@@ -8,6 +8,12 @@
 $ npm install sha1-file
 ```
 
+__Test:__
+
+```
+$ npm test
+```
+
 ### API
 
 _Sync:_
