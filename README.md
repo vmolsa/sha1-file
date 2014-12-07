@@ -54,6 +54,6 @@ sha1File.async('./null', function (data) {
 }, true);
 ```
 
-### LICENSE
+### License
 
 MIT
