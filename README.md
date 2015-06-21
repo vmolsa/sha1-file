@@ -1,6 +1,6 @@
-# sha1-file [![Build Status](https://travis-ci.org/roryrjb/sha1-file.svg?branch=master)](https://travis-ci.org/roryrjb/sha1-file)
+# sha1-file [![Build Status](https://travis-ci.org/roryrjb/sha1-file.svg?branch=master)](https://travis-ci.org/roryrjb/sha1-file) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-> Simply return an `sha1` sum of a given file.
+> Simply return an `sha1` sum of a given file. If using async version (by including callback), it will stream; successfully tested on files 4 GB+.
 
 ### Installation
 
@@ -16,42 +16,21 @@ $ npm test
 
 ### API
 
-_Sync:_
-
-__sha1File(path)__
+__sha1File(path, [callback])__
 
 ```javascript
-var sha1File = require('sha1-file');
+var sha1File = require('sha1-file')
 
-sha1File('path/to/a_file'); // '18e904aae79b5642ed7975c0a0074936'
-```
+// sync (no callback)
 
-_Async:_
+sha1File('./path/to/a_file') // 'c8a2e2125f94492082bc484044edb4dc837f83b'
 
-__sha1File(path, callback, [strict])__
+// async/streamed (if using callback)
 
-If _strict_ is `true` and there is an error it will `throw` it, otherwise it will pass an error string through the callback.
-
-```javascript
-sha1File.async('./README.md', function (data) {
-  console.log(data);
-});
-
-sha1File.async('./README.md', function (data) {
-  console.log(data);
-}, true);
-
-// errors
-
-// non-strict: will pass through an error to `data`
-sha1File.async('./null', function (data) {
-  console.log(data);
-});
-
-// strict: will throw an error
-sha1File.async('./null', function (data) {
-  console.log(data);
-}, true);
+sha1File('./path/to/a_file', function (error, sum) {
+  if (error) return console.log(error)
+  console.log(sum) // 'c8a2e2125f94492082bc484044edb4dc837f83b'
+})
 ```
 
 ### License

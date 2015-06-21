@@ -1,22 +1,26 @@
-'use strict';
+'use strict'
 
-var sha1 = require('./index');
-var assert = require('assert');
+var sha1File = require('./index')
+var assert = require('assert')
+var filename = 'LICENSE.md'
+var preCheckedSum = '3c8a2e2125f94492082bc484044edb4dc837f83b'
 
-assert.equal(sha1('./LICENSE.md'), '635cf3c238455570c909d24a5237050cbb1837e9');
+sha1File(filename, function (error, sum) {
+  console.log('sum = ' + sum)
+  assert(error === null)
+  assert(sum === preCheckedSum)
+  console.log('Pass 2/2')
+})
 
-sha1.async('./LICENSE.md', function (data) {
-  assert.equal(data, '635cf3c238455570c909d24a5237050cbb1837e9');
-});
+var syncSum = sha1File(filename)
 
-sha1.async('./LICENSE.md', function (data) {
-  assert.equal(data, '635cf3c238455570c909d24a5237050cbb1837e9');
-}, true);
+assert(syncSum === preCheckedSum)
+console.log('sum = ' + syncSum)
+console.log('Pass 1/2')
 
 // errors
 
-// non-strict: will pass through an error to `data`
-sha1.async('./null', function (data) {
-  assert.equal(data.code, 'ENOENT');
-});
-
+sha1File('does not exist', function (error, sum) {
+  assert(error)
+  assert(!sum)
+})
