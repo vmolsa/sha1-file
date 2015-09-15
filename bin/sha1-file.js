@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var sha1File = require('../index.js');
 var files = process.argv;
