@@ -8,7 +8,7 @@
     "LICENSE.md",
     "README.md"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "return an sha1sum of a given file",
   "keywords": [
     "sha1",
