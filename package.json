@@ -1,6 +1,7 @@
 {
   "name": "sha1-file",
   "main": "index.js",
+  "bin": "./bin/sha1-file.js",
   "files": [
     "index.js",
     "test.js",
