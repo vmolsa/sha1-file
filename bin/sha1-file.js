@@ -10,5 +10,5 @@ if (files.length) {
     if (fs.existsSync(file)) {
       console.log(sha1File(file));
     }
-  }
+  });
 }
